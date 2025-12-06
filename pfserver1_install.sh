@@ -1,6 +1,12 @@
 
 #!/bin/bash
 
+# Exit on error
+set -e
+
+# Suppress needrestart prompts (list mode)
+sudo sed -i 's/#$nrconf{restart} = '\''i'\'';/$nrconf{restart} = '\''l'\'';/g' /etc/needrestart/needrestart.conf
+
 # Script to install and set up essential packages on Ubuntu 22.04:
 # SSH, net-tools, Microsoft package repository, .NET 8, Nginx, and PostgreSQL.
 
